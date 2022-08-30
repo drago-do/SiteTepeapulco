@@ -545,6 +545,11 @@ nav {
 }
 
 @media (max-width: 600px) {
+  .carrousel img {
+    object-fit: cover;
+    height: 300px;
+  }
+
   .enlaces {
     text-align: center;
     padding: 0 2rem;
