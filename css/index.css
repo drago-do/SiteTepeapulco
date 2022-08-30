@@ -1,0 +1,630 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../img/background.jpg) no-repeat center center fixed;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.98) 20px,
+    rgba(119, 119, 119, 0.73) 200px
+  );
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6rem;
+  font-size: 1.5rem;
+  color: #3c4056;
+}
+
+.header img {
+  max-width: 10rem;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.enlaces {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 6rem;
+  font-size: 1.5rem;
+  color: #3c4056;
+}
+
+.enlaces li {
+  -webkit-transition: background 0.5s, border-radius 0.5s;
+  transition: background 0.5s, border-radius 0.5s;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.enlaces li:hover {
+  background-color: #998675;
+  border-radius: 15px;
+}
+
+.enlaces li * {
+  cursor: pointer;
+  color: #3c4056;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+#pmd {
+  transform: scale3d(1.1, 1.1, 1);
+}
+#pmd:hover {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transform: scale(0.98);
+}
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  z-index: +2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 120px;
+}
+
+.background-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 20px,
+    rgba(119, 119, 119, 0.7) 200px
+  );
+}
+
+#banner-bottom {
+  visibility: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: +2;
+  font-size: 1rem;
+  color: #3c4056;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 20px,
+    rgba(119, 119, 119, 0.3) 200px
+  );
+  position: fixed;
+  bottom: 0;
+  padding: 0 6rem;
+  box-shadow: 0px -10px 71px -11px rgba(0, 0, 0, 0.63);
+  -webkit-box-shadow: 0px -10px 71px -11px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: 0px -10px 71px -11px rgba(0, 0, 0, 0.63);
+}
+
+#banner-bottom img {
+  max-height: 50px;
+}
+
+.texto-carousel {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+.enlaces-carousel {
+  font-weight: bolder;
+  transition: color 0.5s;
+  color: #fff;
+}
+
+.enlaces-carousel:hover {
+  color: rgb(166, 38, 46);
+}
+
+.botones-flotantes {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  z-index: +1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#backend-formulario {
+  opacity: 0;
+}
+
+.boton-flotante {
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 3px;
+  width: 200px;
+  padding: 10px;
+  background-color: rgb(166, 38, 46);
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.boton-flotante:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(166, 38, 46);
+}
+
+.contenido-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(166, 38, 46);
+}
+
+.contenido-1-logo {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.contenido-1-logo img {
+  max-width: 20rem;
+}
+
+.contenido-1-presindenta-mensaje {
+  margin-bottom: 40px;
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.imagen-presidenta-y-texto {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.marco-imagen-presidenta {
+  border: 5px solid #fff;
+}
+.contenedor-mensaje-presidenta {
+  width: 60%;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 40px 20px;
+}
+
+.contenido-1-fb-y-actividades {
+  margin-bottom: 50px;
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenido-1-fb {
+  width: 50%;
+}
+.contenido-1-actividades {
+  width: 50%;
+}
+
+.contenido-1-mision-vision {
+  margin-bottom: 40px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-space:hover .card {
+  transform: rotateY(-180deg);
+}
+
+.tarjeta {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 3rem;
+  border-radius: 10px;
+  height: 100%;
+  margin: 30px;
+  width: 100%;
+  background-color: rgb(166, 38, 46);
+  color: white;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.tarjeta:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.contenido-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(166, 38, 46);
+}
+
+.contenido-2-plan-de-desarrollo {
+  margin-top: 40px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenido-2-plan-img {
+  transition: all 0.5s ease;
+  width: 40%;
+  border-radius: 20px;
+  -webkit-box-shadow: 10px 9px 25px -8px #000000;
+  box-shadow: 10px 9px 25px -8px #000000;
+}
+
+.contenido-2-plan-img:hover {
+  transform: rotate3d(1, 1, 0, -20deg);
+}
+
+.contenido-2-contenedorBotones {
+  margin: 30px;
+  height: 15rem;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenido-2-boton {
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+.contenido-2-boton:hover {
+  color: rgb(166, 38, 46);
+  font-weight: bolder;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    38px -50px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 38px -50px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.contenido-2-telefonos {
+  font-size: 1.2em;
+  color: #fff;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.icono {
+  font-size: 6em;
+}
+.telefonos {
+  font-size: 1.7em;
+}
+
+.contenido-2-telefonos-mas-usados {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contenido-2-telefonos-mas-usados-texto-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-2-telefonos-mas-usados:hover {
+  color: #ffffff;
+  transition: all 1s ease 1s;
+}
+.contenido-2-telefonos-mas-usados-texto a {
+  text-align: center;
+  font-size: 1.6em;
+  color: #fff;
+  text-decoration: none;
+}
+.contenido-2-telefonos-mas-usados-texto :hover {
+  transform: scale(1.1);
+  color: #afafaf;
+  filter: drop-shadow(-2px 2px 15px rgba(255, 255, 255, 0.5));
+}
+
+.contenido-2-telefonos-mas-usados-texto img {
+  width: 10rem;
+}
+
+.contenido-3 {
+  margin-top: 60px;
+  margin-bottom: 120px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-contacto {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 100px 60px;
+  color: #000;
+}
+
+.contacto-informacion {
+  width: 50%;
+}
+
+.contacto-informacion h2 {
+  font-size: 3em;
+  color: rgb(166, 38, 46);
+  font-weight: bolder;
+  text-shadow: 4px 2px 20px rgba(0, 0, 0, 0.24);
+}
+.contacto-informacion p {
+  font-size: 1.5em;
+  text-align: justify;
+}
+
+.contenedor-3-botones {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.boton-informacion-contacto {
+  margin: 15px;
+  width: 80%;
+  padding: 20px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.5s ease;
+}
+
+.boton-informacion-contacto i {
+  margin-right: 10px;
+  color: rgb(166, 38, 46);
+}
+.boton-informacion-contacto:hover {
+  color: rgb(166, 38, 46);
+  font-weight: bolder;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    38px -50px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 38px -50px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.contenedor-3-botones-circulares {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-3-botones-circulares i {
+  font-size: 2.5em;
+  color: rgb(166, 38, 46);
+  transition: all 0.5s ease;
+}
+.contenedor-3-botones-circulares i:hover {
+  font-size: 2.6em;
+  color: #1b74e4;
+}
+.contacto-formulario {
+  padding: 30px;
+  margin-left: 50px;
+  width: 40%;
+  border-radius: 31px;
+  background: #fff;
+  box-shadow: 17px 17px 47px #afafaf, -17px -17px 47px #ffffff;
+}
+
+.contenedor-3-formulario-inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contenedor-3-formulario-inputs input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: inset 8px 8px 9px #d3d3d3, inset -8px -8px 9px #ffffff;
+  transition: all 0.5s ease;
+}
+.contenedor-3-formulario-inputs input:focus {
+  transition: all 0.5s ease;
+  transform: scale(0.98);
+  outline: none;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+}
+.contenedor-3-formulario-inputs textarea {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: inset 8px 8px 9px #d3d3d3, inset -8px -8px 9px #ffffff;
+  transition: all 0.5s ease;
+  margin-bottom: 20px;
+}
+.contenedor-3-formulario-inputs textarea:focus {
+  transition: all 0.5s ease;
+  transform: scale(0.98);
+  outline: none;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+}
+
+.contenedor-3-formulario-botones {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.contenedor-3-formulario-botones button {
+  padding: 20px 40px;
+  border: none;
+  border-radius: 18px;
+  transition: all 0.5s ease;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 8px 8px 9px #bababa, -8px -8px 9px #ffffff;
+}
+.contenedor-3-formulario-botones button:hover {
+  color: rgb(166, 38, 46);
+  font-weight: bolder;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 8px 8px 9px #ffffff, -8px -8px 9px #bababa;
+}
+
+@media (max-width: 600px) {
+  .enlaces {
+    text-align: center;
+    padding: 0 2rem;
+  }
+  .contenido-1-presindenta-mensaje {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-mensaje-presidenta {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .contenido-1-fb-y-actividades {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenido-1-fb {
+    width: 90%;
+  }
+  .contenido-1-actividades {
+    width: 90%;
+  }
+
+  .contenido-1-mision-vision {
+    flex-direction: column;
+  }
+
+  .contenido-2-plan-de-desarrollo {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenido-2-contenedorBotones {
+    width: 100%;
+  }
+  .contenido-2-plan-img {
+    width: 100%;
+  }
+
+  .contenido-2-telefonos {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenido-2-telefonos * {
+    margin: 30px;
+  }
+  .contenido-2-telefonos-mas-usados {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contenedor-contacto {
+    width: 100%;
+    flex-direction: column;
+    padding: 100px 5px;
+  }
+  .contacto-informacion {
+    width: 100%;
+    margin: 0;
+    padding: 30px 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contacto-formulario {
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-3-botones {
+    width: 100%;
+    margin: 0;
+  }
+}
